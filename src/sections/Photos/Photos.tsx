@@ -10,28 +10,31 @@ import Image_9 from './images/9.jpg'
 import Photo from './components/Photo.tsx';
 import {Button} from '../../components/Button.tsx';
 import {Text, TextVariant} from '../../components/Text.tsx';
+import {useMediaBreakpoint} from '../../hooks/useMediaBreakpoint.ts';
 
 type PhotosProps = {
   href: string
 }
 export const Photos = ({href}: PhotosProps) => {
+  const lg = useMediaBreakpoint('lg')
   return (
     <div className='flex flex-col py-24 gap-6 text-center items-center'>
-      <div className='flex justify-center gap-5'>
+      <div className='flex flex-col lg:flex-row justify-center gap-5'>
         <Photo src={Image_1}></Photo>
         <Photo src={Image_2}></Photo>
         <Photo src={Image_3}></Photo>
       </div>
-      <div className='flex justify-center gap-5'>
+      {lg && <><div className='flex justify-center gap-5'>
         <Photo src={Image_4}></Photo>
         <Photo src={Image_5}></Photo>
         <Photo src={Image_6} alt={'6'}></Photo>
       </div>
-      <div className='flex justify-center gap-5'>
-        <Photo src={Image_7}></Photo>
-        <Photo src={Image_8}></Photo>
-        <Photo src={Image_9}></Photo>
-      </div>
+        <div className='flex justify-center gap-5'>
+          <Photo src={Image_7}></Photo>
+          <Photo src={Image_8}></Photo>
+          <Photo src={Image_9}></Photo>
+        </div></>}
+
       <div className='flex pt-6 self-center'>
         <a href={href}><Button><Text variant={TextVariant.H3}>Купить билет</Text></Button></a>
       </div>

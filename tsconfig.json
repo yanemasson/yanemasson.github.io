@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "sourceMap": true,
+    "target": "ES6",
     "useDefineForClassFields": true,
     "lib": [
       "ES2020",
@@ -11,7 +12,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -19,13 +20,18 @@
     "jsx": "react-jsx",
     /* Linting */
     "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true
   },
+  "exclude": ["node_modules"],
   "include": [
-    "src"
+    "src/**/*"
   ],
   "references": [
     {

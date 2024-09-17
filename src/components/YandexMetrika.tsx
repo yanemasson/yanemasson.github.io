@@ -18,6 +18,7 @@ declare global {
 
 const YandexMetrika: React.FC<YandexMetrikaProps> = ({ counterId }) => {
   useEffect(() => {
+    console.log('Яндекс Метрика работает')
     // Создаем и добавляем скрипт Яндекс.Метрики
     const script = document.createElement('script');
     script.text = `

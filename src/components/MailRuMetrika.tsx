@@ -20,6 +20,7 @@ declare global {
 
 const MailRuMetrika: React.FC<MailRuMetrikaProps> = ({ counterId }) => {
   useEffect(() => {
+    console.log('Майл Ру Метрика работает')
     // Инициализация _tmr
     window._tmr = window._tmr || [];
     window._tmr.push({id: counterId, type: "pageView", start: (new Date()).getTime()});
